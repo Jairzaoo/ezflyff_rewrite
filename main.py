@@ -207,8 +207,8 @@ def assist_loop(profile_name, profile_settings, toggle_key_listeners):
         screenshot = ImageGrab.grab(bbox=(x_offset, y_offset, right, bottom))
         pixel_color = screenshot.getpixel((x - x_offset, y - y_offset)) 
         mp_color = screenshot.getpixel((xmp - x_offset, ymp - y_offset))  
-        logger.info(f"Rgb color for hp{pixel_color}")
-        logger.info(f"Rgb color for mp{mp_color}")
+        #logger.info(f"Rgb color for hp{pixel_color}")
+        #logger.info(f"Rgb color for mp{mp_color}")
 
         if pixel_color == heal_color_threshold:
 
@@ -220,7 +220,7 @@ def assist_loop(profile_name, profile_settings, toggle_key_listeners):
 
         if mp_color == heal_color_threshold:
 
-            logger.info(f"pressing heal hotkey {mp_hotkey} on {profile_name}.")
+            logger.info(f"pressing mp hotkey {mp_hotkey} on {profile_name}.")
             press_key(game_handle, mp_hotkey)
             time.sleep(mp_interval + random.random())
 
